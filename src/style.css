@@ -1,13 +1,84 @@
 body {
-  background-color: rgb(246, 238, 240);
+  background-color: rgba(237, 157, 157, 0.2);
 }
-.container {
-  max-width: 900px;
-  max-height: 900px;
-  background: rgb(255, 192, 203, 0.6);
-  margin: 0 auto;
-}
+
 h1 {
   text-align: center;
   color: blueviolet;
+}
+form {
+  margin: 40px auto;
+}
+.container {
+  display: grid;
+  width: 900px;
+  height: 500px;
+  border: 1px solid rgba(82, 164, 205, 0.5);
+  background: rgba(237, 157, 157, 0.5);
+  margin: 50px auto;
+  border-radius: 10px;
+}
+.weather-further-info,
+.city-weather-info {
+  list-style: none;
+}
+.current-city-info-container {
+  margin: 0 auto;
+}
+.current-city-further-info-container {
+  margin-left: 150px;
+}
+
+.footer {
+  margin: 30px auto;
+  text-align: center;
+}
+.six-day-forecast {
+  border: 1px solid rgba(82, 164, 205, 0.5);
+  text-align: center;
+  padding: 10px;
+  background: rgb(255, 255, 255, 0.6);
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+.six-day-forecast:hover {
+  background: rgba(237, 157, 157, 0.5);
+  color: white;
+  border: 1px solid rgba(252, 253, 254, 0.994);
+}
+
+#search-city-submit-btn,
+#current-btn,
+#search-city-input {
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 30px;
+  border: 1px solid white;
+  color: white;
+}
+#search-city-submit-btn {
+  background-color: rgba(237, 157, 157, 0.5);
+}
+#search-city-submit-btn:hover,
+#current-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#current-btn {
+  background-color: rgba(82, 164, 205, 0.5);
+}
+
+#search-city-input {
+  color: black;
+}
+#search-city-input:focus {
+  border: 1px solid rgb(250, 246, 246);
+  outline: 1px solid rgba(82, 164, 205, 0.5);
+}
+
+#source-code-link {
+  text-decoration: none;
+  color: rgba(82, 164, 205);
 }

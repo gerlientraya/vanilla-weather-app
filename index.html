@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+   
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,35 +14,108 @@
       src="https://kit.fontawesome.com/11cac54ca6.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="src/style.css" />
 
     <title>Vanilla Weather App</title>
   </head>
   <body>
     <div class="container">
-      <h2>Taraguilla</h2>
-      <ul>
-        <li>Monday 13:36</li>
-        <li>Clear Sky</li>
-      </ul>
-      <div class="row">
-        <div class="col-md-6">
-          <i class="fa-solid fa-sun fa-beat-fade" style="color: #ecc455"></i>
-          12° C | F
-        </div>
-        <div class="col-md-6">
-          <ul>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 20%</li>
-            <li>Wind: 2 km/h</li>
-          </ul>
-        </div>
+        <form >
+          <div class="row">
+            <div class="col">
+              <input 
+                type="text" 
+                placeholder="Search City"
+                autocomplete="off"
+                autofocus="on"
+                id="search-city-input"
+              >
+            </div>
+            <div class="col">
+              <input type="submit" value="submit" id="search-city-submit-btn">
+            </div>
+            <div class="col">
+             <button id="current-btn">Current</button>
+            </div>
+          </div>
+         </form>
+      <div class="current-city-info-container">
+        <h2>Taraguilla </h2>
       </div>
-      <small
-        ><a href="https://github.com/gerlientraya/vanilla-weather-app"
-          >Open Source Code
+      <div class="current-city-further-info-container">
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li class="city-weather-info">Monday 13:36</li>
+              <li class="city-weather-info">Clear Sky</li>
+              <li class="city-weather-info"><i class="fa-solid fa-sun fa-beat-fade" style="color: #090807"></i>
+                12° C | F</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="weather-further-info">Precipitation: 0%</li>
+              <li class="weather-further-info">Humidity: 20%</li>
+              <li class="weather-further-info">Wind: 2 km/h</li>
+            </ul>
+          </div>
+        </div> 
+      </div>
+      <div class="six-day-weather-forecast-container">
+        <div class="row">
+          <div class="col six-day-forecast">
+            <h6>Tuesday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #0c0c0b"></i>
+            12° C | F
+            </small>
+          </div>
+          <div class="col six-day-forecast ">
+            <h6>Wednesday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #0c0c0b"></i>
+            12° C | F
+            </small>
+          </div>
+          <div class="col six-day-forecast">
+            <h6>Thursday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #0c0c0b"></i>
+            12° C | F
+            </small>
+          </div>
+          <div class="col six-day-forecast">
+            <h6>Friday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #0c0c0b"></i>
+            12° C | F
+            </small>
+          </div>
+          <div class="col six-day-forecast">
+            <h6>Saturday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #040403"></i>
+            12° C | F
+            </small> 
+          </div>
+          <div class="col six-day-forecast">
+            <h6>Sunday</h6>
+            <small>
+              <i class="fa-solid fa-sun fa-beat-fade" style="color: #0c0c0b"></i>
+            12° C | F
+            </small>
+          </div>
+      </div>
+      <div class="footer">
+        <small id="source-code">
+          <a href="https://github.com/gerlientraya/vanilla-weather-app"
+           id="source-code-link">Open Source Code
         </a>
-        by Gerlie Traya</small
-      >
+        by Gerlie Traya
+      </small>
+      </div>
+      
+      
     </div>
 
     <script src="src/app.js"></script>
