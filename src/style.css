@@ -65,6 +65,14 @@ form {
   background-color: white;
   color: black;
 }
+#weather-icon {
+  position: relative;
+  top: 10px;
+  margin-top: -30px;
+  margin-left: -10px;
+  height: 60px;
+  width: 60px;
+}
 
 #current-btn {
   background-color: rgba(82, 164, 205, 0.5);
@@ -81,4 +89,16 @@ form {
 #source-code-link {
   text-decoration: none;
   color: rgba(82, 164, 205);
+}
+#temperature {
+  font-size: 24px;
+}
+#unit-conversion {
+  position: relative;
+  bottom: 10px;
+  left: 5px;
+}
+#fahrenheit-unit,
+#celcius-unit {
+  text-decoration: none;
 }
