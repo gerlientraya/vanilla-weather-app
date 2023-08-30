@@ -1,4 +1,4 @@
-//globala area
+//global area
 
 let currentWeather = 20;
 
