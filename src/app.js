@@ -38,11 +38,11 @@ function displayTemperature(response) {
   let liCurrentDay = document.querySelector(".current-day");
   let hour = now.getHours();
   if (hour < 10) {
-    `0${hour}`;
+    hour = `0${hour}`;
   }
   let minutes = now.getMinutes();
   if (minutes < 10) {
-    `0${minutes}`;
+    minutes = `0${minutes}`;
   }
 
   liCurrentDay.innerHTML = `${day} ${hour}:${minutes}`;
