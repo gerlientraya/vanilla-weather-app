@@ -47,6 +47,9 @@ form {
   color: white;
   border: 1px solid rgba(252, 253, 254, 0.994);
 }
+.weather-forecast-minimum-temp {
+  opacity: 0.5;
+}
 
 #search-city-submit-btn,
 #current-btn,
@@ -101,4 +104,8 @@ form {
 #fahrenheit-unit,
 #celcius-unit {
   text-decoration: none;
+}
+#forecast-weather-icon {
+  width: 40px;
+  height: 40px;
 }

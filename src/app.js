@@ -81,3 +81,27 @@ function convertToCelcius(event) {
 
 let celciusLink = document.querySelector("#celcius-unit");
 celciusLink.addEventListener("click", convertToCelcius);
+
+//forecast area
+function showForecast() {
+  let forecastElement = document.querySelector("#weather-forecast-container");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">
+  <div class="col-2 six-day-forecast">
+    <div class="weather-forecast-day">Tuesday</div>
+    <img
+      src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+      alt="rain-day"
+      id="forecast-weather-icon"
+    />
+    <div class="weather-forecast-temperature">
+      <span class="weather-forecast-maximum-temp">18°</span>
+      <span class="weather-forecast-minimum-temp"> 16°</span>
+    </div>
+  </div>
+</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+showForecast();
