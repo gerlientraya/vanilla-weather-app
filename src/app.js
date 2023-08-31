@@ -47,18 +47,19 @@ function displayTemperature(response) {
 
   liCurrentDay.innerHTML = `${day} ${hour}:${minutes}`;
 }
-function showCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#search-city-input");
-  let city = cityInput.value;
+function search(city) {
   let apiKey = "831d2db70736b432af4c7ca0oe8f007t";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-city-input");
+  search(cityInput.value);
 }
 
 let form = document.querySelector("form");
-form.addEventListener("submit", showCity);
+form.addEventListener("submit", handleSubmit);
 //current button functionality
 //unit conversion to fahrenheit
 
@@ -85,23 +86,33 @@ celciusLink.addEventListener("click", convertToCelcius);
 //forecast area
 function showForecast() {
   let forecastElement = document.querySelector("#weather-forecast-container");
+  let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+     
+      <div class="col-2 six-day-forecast">
+        <div class="weather-forecast-day">${day}</div>
+        <img
+          src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+          alt="rain-day"
+          id="forecast-weather-icon"
+        />
+        <div class="weather-forecast-temperature">
+          <span class="weather-forecast-maximum-temp">18°</span>
+          <span class="weather-forecast-minimum-temp"> 16°</span>
+        </div>
+      </div>
+    
+  `;
+  });
 
-  let forecastHTML = `<div class="row">
-  <div class="col-2 six-day-forecast">
-    <div class="weather-forecast-day">Tuesday</div>
-    <img
-      src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-      alt="rain-day"
-      id="forecast-weather-icon"
-    />
-    <div class="weather-forecast-temperature">
-      <span class="weather-forecast-maximum-temp">18°</span>
-      <span class="weather-forecast-minimum-temp"> 16°</span>
-    </div>
-  </div>
-</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 showForecast();
+search("Manila");
+
+//document.addEventListener("DOMContentLoaded", getCurrentLocation);
