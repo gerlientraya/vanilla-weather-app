@@ -1,11 +1,20 @@
 //global area
 
 let currentWeather = 20;
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let latitude = coordinates.latitude;
+  let longitude = coordinates.longitude;
+  let apiKey = "831d2db70736b432af4c7ca0oe8f007t";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}3&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 
 // search city functionality
 function displayTemperature(response) {
   console.log(response.data);
-  let h2 = document.querySelector("h2");
+  let h2 = document.querySelector("#current-city-name");
   h2.innerHTML = response.data.city;
   let li = document.querySelector(".condition");
   li.innerHTML = response.data.condition.description;
@@ -24,6 +33,9 @@ function displayTemperature(response) {
   let liWind = document.querySelector(".wind");
   liWind.innerHTML = `Wind:${Math.round(response.data.wind.speed)} km/h`;
 
+  getForecast(response.data.coordinates);
+}
+function showDayAndTime() {
   let now = new Date();
   let days = [
     "Sunday",
@@ -47,6 +59,7 @@ function displayTemperature(response) {
 
   liCurrentDay.innerHTML = `${day} ${hour}:${minutes}`;
 }
+
 function search(city) {
   let apiKey = "831d2db70736b432af4c7ca0oe8f007t";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -84,7 +97,8 @@ let celciusLink = document.querySelector("#celcius-unit");
 celciusLink.addEventListener("click", convertToCelcius);
 
 //forecast area
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast-container");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -112,7 +126,6 @@ function showForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-showForecast();
 search("Manila");
 
 //document.addEventListener("DOMContentLoaded", getCurrentLocation);
